@@ -1,5 +1,9 @@
 
+% This file is part of csvbeam released under the MIT license.
+% See the LICENSE file for more information.
+
 -module(csvbeam).
+-author("Nicolas R Dufour <nicolas.dufour@nemoworld.info>").
 
 -export([process_csv_file/2]).
 
