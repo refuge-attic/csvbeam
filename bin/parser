@@ -1,0 +1,12 @@
+#! /usr/bin/env escript
+%%! -pa ./ebin/ -pa ./deps/ejson/ebin -pa ./deps/couchbeam/ebin -pa ./deps/ecsv/ebin -pa ./deps/ibrowse/ebin -pa ./deps/mochiweb/ebin
+
+main(Args) ->
+    couchbeam:start(),
+
+    case Args of
+        [File, DbName] -> csvbeam:process_csv_file(File, DbName);
+        _ -> io:format("Wrong usage: File Db~n", [])
+    end,
+
+    ok.
